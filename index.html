@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كربون تك | معرض اللابتوبات ومحطات العمل الاحترافية</title>
+  <meta name="description" content="معرض متخصص في اللابتوبات الاحترافية، تجميعات الألعاب، ومحطات العمل الهندسية مع عرض تفصيلي للمواصفات والصور والطلب عبر واتساب." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ====================================================================
+       Top Specification Bar
+       ==================================================================== -->
+  <div class="top-strip">
+    <div class="container top-strip-inner">
+      <div class="top-strip-features">
+        <span class="top-strip-item">
+          <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>ضمان معتمد وفحص تقني شامل</span>
+        </span>
+        <span class="top-strip-item">
+          <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>توصيل مجاني للطلبات فوق 1500$</span>
+        </span>
+      </div>
+      <span class="ltr-text" style="font-size: 0.74rem; color: var(--text-muted);">CARBON TECH HARDWARE SHOWROOM</span>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Header & Search Bar
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <div class="brand-mark">
+          <svg class="svg-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 17h20l2 3H0l2-3Z"/></svg>
+        </div>
+        <div class="brand-text">
+          <h1>كربون تك</h1>
+          <span>لابتوبات احترافية • محطات عمل • تجميعات PC</span>
+        </div>
+      </a>
+
+      <div class="search-bar">
+        <span class="search-icon">
+          <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </span>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="ابحث بالموديل، المعالج (i9, Ryzen 7)، كرت الشاشة (RTX 4080)..."
+          aria-label="بحث عن جهاز"
+        />
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="تبديل المظهر">
+          <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.93 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span>مظهر فاتح</span>
+        </button>
+
+        <button type="button" class="icon-btn cart-trigger" onclick="openCartDrawer()" aria-label="فتح سلة المشتريات">
+          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>السلة</span>
+          <span class="cart-badge" id="cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       Editorial Hero Showcase
+       ==================================================================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-content">
+          <span class="hero-eyebrow">
+            <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>أحدث منصات الجيل الرابع عشر وكروت RTX 40 Series</span>
+          </span>
+          <h2>عتاد احترافي مصمم للأداء الفائق والدقة الهندسية</h2>
+          <p>
+            تصفح каталог الأجهزة، اضغط على أي بطاقة لاستعراض الصور الحقيقية للجهاز من زوايا متعددة، مع جدول المواصفات التقنية الكامل وخيارات ترقية الرام والتخزين قبل الطلب المباشر عبر واتساب.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">فحص تقني وضمان حقيقي</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">DDR5 / Gen4</span>
+              <span class="stat-label">ترقيات فورية للرام والتخزين</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">4+ Views</span>
+              <span class="stat-label">صور استوديو متعددة لكل جهاز</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="assets/products/gaming-aw-1.png" alt="Alienware 16X Gaming Laptop" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Category Tabs & Technical Filters
+       ==================================================================== -->
+  <section class="controls-section">
+    <div class="container">
+      <div class="controls-top-row">
+        <div class="category-tabs" role="tablist">
+          <button type="button" class="category-tab active" data-category="all">جميع الأجهزة</button>
+          <button type="button" class="category-tab" data-category="gaming-laptops">لابتوبات ألعاب</button>
+          <button type="button" class="category-tab" data-category="workstations">محطات عمل ومونتاج</button>
+          <button type="button" class="category-tab" data-category="business-laptops">لابتوبات أعمال ودراسة</button>
+          <button type="button" class="category-tab" data-category="desktop-pcs">كمبيوترات مكتبية</button>
+        </div>
+
+        <button type="button" class="reset-filters-btn" onclick="resetAllFilters()">
+          <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <span>إعادة ضبط الفلاتر</span>
+        </button>
+      </div>
+
+      <div class="filters-row">
+        <div class="filter-group">
+          <label for="filter-brand">العلامة التجارية (Brand)</label>
+          <select id="filter-brand">
+            <option value="all">كل العلامات التجارية</option>
+            <option value="Dell">Dell / Alienware</option>
+            <option value="Apple">Apple</option>
+            <option value="Custom PC">Custom PC (تجميعات احترافية)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-ram">سعة الرام الأساسية (RAM)</label>
+          <select id="filter-ram">
+            <option value="all">جميع السعات</option>
+            <option value="16GB">16GB / 18GB</option>
+            <option value="32GB">32GB DDR5</option>
+            <option value="64GB">64GB Workstation</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-sort">الترتيب حسب السعر</label>
+          <select id="filter-sort">
+            <option value="featured">الأبرز أولاً</option>
+            <option value="price-asc">السعر: من الأقل للأعلى</option>
+            <option value="price-desc">السعر: من الأعلى للأقل</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-bar">
+        <span id="results-count">جاري تحميل الأجهزة...</span>
+        <span>اضغط على البطاقة لعرض جميع الصور وجدول المواصفات</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Product Catalog Grid
+       ==================================================================== -->
+  <main class="catalog-section">
+    <div class="container">
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </main>
+
+  <!-- ====================================================================
+       Product Details Modal (Multi-Image Gallery + Full Technical Specs)
+       ==================================================================== -->
+  <div
+    class="modal-backdrop"
+    id="product-modal-backdrop"
+    onclick="if(event.target === this) closeProductModal()"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="product-modal">
+      <div class="modal-header">
+        <span class="modal-header-title ltr-text" id="modal-sku-title">SKU</span>
+        <button type="button" class="close-modal-btn" onclick="closeProductModal()" aria-label="إغلاق">
+          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Right Column: Multi-Image Interactive Gallery -->
+        <div class="modal-gallery">
+          <div class="gallery-main-stage">
+            <button
+              type="button"
+              class="gallery-nav-btn gallery-nav-prev"
+              onclick="stepModalImage(-1)"
+              aria-label="الصورة السابقة"
+            >
+              <svg class="svg-icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <img id="modal-main-image" src="" alt="صورة المنتج" />
+            <button
+              type="button"
+              class="gallery-nav-btn gallery-nav-next"
+              onclick="stepModalImage(1)"
+              aria-label="الصورة التالية"
+            >
+              <svg class="svg-icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <div class="gallery-caption-bar">
+              <span id="modal-image-caption">الواجهة الأمامية</span>
+              <span class="ltr-text" id="modal-image-counter">1 / 4</span>
+            </div>
+          </div>
+
+          <div class="gallery-thumbnails" id="modal-thumbnails"></div>
+        </div>
+
+        <!-- Left Column: Product Specs & Purchase Options -->
+        <div class="modal-info">
+          <div class="modal-badges-row" id="modal-badges"></div>
+          <h2 class="modal-product-title" id="modal-title">اسم الجهاز</h2>
+          <p class="modal-product-desc" id="modal-desc"></p>
+
+          <div class="modal-price-box">
+            <div>
+              <span style="font-size: 0.74rem; color: var(--text-muted); display: block; margin-bottom: 2px;">السعر للنسخة المحددة</span>
+              <span class="modal-price-main" id="modal-price-value">0.00 $</span>
+              <span class="old-price" id="modal-old-price" style="margin-right: 0.5rem;"></span>
+            </div>
+            <span class="warranty-pill">
+              <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>مفحوص ومضمون</span>
+            </span>
+          </div>
+
+          <!-- Optional RAM / Storage Upgrade Selector -->
+          <div class="variant-selector-box" id="modal-variants-box">
+            <h4>خيارات سعة الرام والتخزين:</h4>
+            <div class="variant-options" id="modal-variants-list"></div>
+          </div>
+
+          <!-- Detailed Hardware Specifications Table -->
+          <div class="specs-table-wrapper">
+            <div class="specs-table-title">
+              <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              <span>جدول المواصفات التقنية</span>
+            </div>
+            <div class="specs-list" id="modal-specs-list"></div>
+          </div>
+
+          <!-- Quantity & Action Buttons -->
+          <div class="modal-purchase-bar">
+            <div class="qty-control" aria-label="الكمية">
+              <button type="button" class="qty-btn" onclick="changeModalQty(-1)">-</button>
+              <span class="qty-display" id="modal-qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeModalQty(1)">+</button>
+            </div>
+
+            <button
+              type="button"
+              class="btn-add-cart-main"
+              onclick="addActiveModalProductToCart(false)"
+            >
+              <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span id="modal-add-btn-text">إضافة للسلة</span>
+            </button>
+
+            <button
+              type="button"
+              class="btn-whatsapp-direct"
+              onclick="addActiveModalProductToCart(true)"
+            >
+              <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>طلب مباشر عبر واتساب</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Slide-Over Shopping Cart & 5-Step WhatsApp Checkout Drawer
+       ==================================================================== -->
+  <div
+    class="drawer-backdrop"
+    id="cart-drawer-backdrop"
+    onclick="if(event.target === this) closeCartDrawer()"
+  >
+    <aside class="cart-drawer" aria-label="سلة المشتريات وإتمام الطلب">
+      <div class="drawer-header">
+        <h3>
+          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>سلة المشتريات وإتمام الطلب</span>
+        </h3>
+        <button type="button" class="close-modal-btn" onclick="closeCartDrawer()" aria-label="إغلاق السلة">
+          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="drawer-content">
+        <!-- Step 2: Cart Items List -->
+        <div class="cart-items-list" id="cart-items-container"></div>
+
+        <!-- Step 3 & 4: Promo, Totals & Customer Info -->
+        <div id="cart-checkout-section" style="display: none; flex-direction: column; gap: 1rem;">
+          <div class="promo-box">
+            <input type="text" id="promo-input" placeholder="كود الخصم (TECH10 أو LAPTOP50)" />
+            <button type="button" onclick="applyPromoCode()">تطبيق</button>
+          </div>
+
+          <div class="totals-card">
+            <div class="totals-row">
+              <span>المجموع الفرعي</span>
+              <span class="ltr-text" id="summary-subtotal">0.00 $</span>
+            </div>
+            <div class="totals-row">
+              <span>الخصم</span>
+              <span class="ltr-text" id="summary-discount" style="color: var(--accent-emerald);">- 0.00 $</span>
+            </div>
+            <div class="totals-row">
+              <span>رسوم التوصيل</span>
+              <span class="ltr-text" id="summary-delivery">0.00 $</span>
+            </div>
+            <div class="totals-row final">
+              <span>الإجمالي النهائي</span>
+              <span class="ltr-text" id="summary-final-total">0.00 $</span>
+            </div>
+          </div>
+
+          <form class="checkout-form" onsubmit="completeOrderViaWhatsApp(event)">
+            <h4>بيانات العميل والاستلام</h4>
+
+            <div class="form-field">
+              <label for="cust-name">الاسم الكامل *</label>
+              <input type="text" id="cust-name" required placeholder="أدخل الاسم الثلاثي" />
+            </div>
+
+            <div class="form-field">
+              <label for="cust-phone">رقم الهاتف / واتساب *</label>
+              <input type="tel" id="cust-phone" required placeholder="0501234567" />
+            </div>
+
+            <div class="form-field">
+              <label for="cust-delivery-method">طريقة الاستلام</label>
+              <select id="cust-delivery-method">
+                <option value="delivery">توصيل إلى العنوان</option>
+                <option value="pickup">استلام من المعرض (مجاني)</option>
+              </select>
+            </div>
+
+            <div class="form-field" id="address-field-wrapper">
+              <label for="cust-address">العنوان بالتفصيل *</label>
+              <input type="text" id="cust-address" placeholder="المدينة، الحي، الشارع، رقم المبنى" />
+            </div>
+
+            <div class="form-field">
+              <label for="cust-notes">ملاحظات إضافية (اختياري)</label>
+              <textarea id="cust-notes" rows="2" placeholder="مثال: تثبيت البرامج الهندسية، موعد الاستلام..."></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button
+          type="button"
+          id="whatsapp-submit-btn"
+          class="btn-whatsapp-checkout"
+          onclick="completeOrderViaWhatsApp(event)"
+          disabled
+        >
+          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>إرسال الطلب عبر واتساب</span>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>كربون تك — نظام عرض وطلب الأجهزة الإلكترونية عبر واتساب (جاهز للربط مع Sanity CMS)</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
