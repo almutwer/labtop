@@ -1,7 +1,6 @@
 /**
  * ============================================================================
- * CARBON TECH - Main Application Logic (5-Step Ordering Flow + Gallery Modal)
- * Visual Identity: Luxury Carbon Dark + Inline SVG Icons (Zero Emojis)
+ * CARBON TECH - Minimalist Application Logic (5-Step Ordering + Gallery Modal)
  * Strict Technical Rules:
  * 1. Read-only Sanity CMS architecture (No write tokens in frontend).
  * 2. Floating-point safe math using safeRound() + .toFixed(2) formatting.
@@ -10,15 +9,9 @@
  */
 
 const SVG_ICONS = {
-  images: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>`,
-  cpu: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>`,
-  ram: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M6 19v-3M10 19v-3M14 19v-3M18 19v-3M8 11V9M16 11V9M12 11V9M2 15h20a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1Z"/></svg>`,
-  storage: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
-  gpu: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2.5"/><circle cx="16" cy="12" r="2.5"/></svg>`,
-  plus: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>`,
-  cartEmpty: `<svg class="svg-icon" style="width:42px;height:42px;opacity:0.4;" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>`,
-  sun: `<svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.93 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>`,
-  moon: `<svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`
+  cartEmpty: `<svg class="svg-icon" style="width:38px;height:38px;opacity:0.35;" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>`,
+  sun: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.93 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>`,
+  moon: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`
 };
 
 const state = {
@@ -27,8 +20,6 @@ const state = {
   filters: {
     category: "all",
     search: "",
-    brand: "all",
-    ram: "all",
     sort: "featured"
   },
   activeProduct: null,
@@ -38,7 +29,7 @@ const state = {
   cart: [],
   appliedPromo: null,
   deliveryMethod: "delivery",
-  theme: "dark"
+  theme: "light"
 };
 
 /* ==========================================================================
@@ -68,7 +59,7 @@ function showToast(message) {
   container.appendChild(toast);
   setTimeout(() => {
     toast.remove();
-  }, 2600);
+  }, 2400);
 }
 
 /* ==========================================================================
@@ -102,26 +93,23 @@ async function loadCatalogData() {
 }
 
 /* ==========================================================================
-   Step 1: Catalog Rendering, Filtering & Product Details Modal
+   Step 1: Minimal Catalog Rendering & Filtering
    ========================================================================== */
 function applyFilters() {
-  const { category, search, brand, ram, sort } = state.filters;
+  const { category, search, sort } = state.filters;
   const query = search.trim().toLowerCase();
 
   let list = state.products.filter((item) => {
     const matchCategory = category === "all" || item.category === category;
-    const matchBrand = brand === "all" || item.brand === brand;
-    const matchRam = ram === "all" || item.specs.ramFilter === ram;
     const matchSearch =
       !query ||
       item.name.toLowerCase().includes(query) ||
       item.brand.toLowerCase().includes(query) ||
       item.specs.cpu.toLowerCase().includes(query) ||
       item.specs.gpu.toLowerCase().includes(query) ||
-      item.specs.ram.toLowerCase().includes(query) ||
-      item.specs.storage.toLowerCase().includes(query);
+      item.specs.ram.toLowerCase().includes(query);
 
-    return matchCategory && matchBrand && matchRam && matchSearch;
+    return matchCategory && matchSearch;
   });
 
   if (sort === "price-asc") {
@@ -140,93 +128,39 @@ function renderProductsGrid() {
   if (!grid) return;
 
   if (countEl) {
-    countEl.textContent = `عرض ${state.filteredProducts.length} من أصل ${state.products.length} جهاز`;
+    countEl.textContent = `اختر أي جهاز لعرض صوره المتعددة وجدول المواصفات الكامل (${state.filteredProducts.length} أجهزة)`;
   }
 
   if (state.filteredProducts.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-        <h3 style="margin-bottom: 0.4rem; font-size: 1.05rem;">لا توجد أجهزة مطابقة لخيارات الفلترة</h3>
-        <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 1.1rem;">جرّب تغيير الفئة أو إعادة ضبط الفلاتر لعرض جميع الأجهزة.</p>
-        <button class="btn-quick-add" onclick="resetAllFilters()" style="margin: 0 auto;">إعادة ضبط الفلاتر</button>
+      <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+        <h3 style="margin-bottom: 0.4rem; font-size: 1rem;">لا توجد نتائج مطابقة</h3>
+        <button class="cart-pill-btn" onclick="resetAllFilters()" style="margin: 0.75rem auto 0;">عرض جميع الأجهزة</button>
       </div>
     `;
     return;
   }
 
+  // Ultra-clean Product Card: Studio Photo + Title + 1-line Brief Spec + Price
   grid.innerHTML = state.filteredProducts
     .map((product) => {
       const mainImage = product.images[0]?.url || "";
-      const imageCount = product.images.length;
-      const hasDiscount = product.oldPrice && product.oldPrice > product.price;
-      const discountAmount = hasDiscount
-        ? safeRound(product.oldPrice - product.price).toFixed(2)
-        : null;
+      const briefSpec = `${product.specs.ramFilter} RAM • ${product.specs.storage.split(" ")[0]} SSD`;
 
       return `
         <article class="product-card" onclick="openProductModal('${product.id}')" aria-label="${product.name}">
           <div class="card-media">
-            <div class="card-badges">
-              <span class="badge badge-condition">${product.condition}</span>
-              ${hasDiscount ? `<span class="badge badge-discount">خصم ${discountAmount}${STORE_CONFIG.currencySymbol}</span>` : ""}
-            </div>
             <img src="${mainImage}" alt="${product.name}" loading="lazy" />
-            <span class="gallery-count-pill">
-              ${SVG_ICONS.images}
-              <span>${imageCount} صور</span>
-            </span>
           </div>
 
           <div class="card-body">
-            <div class="card-meta">
-              <span class="card-brand-tag">${product.brand}</span>
-              <span class="ltr-text">${product.sku}</span>
-            </div>
+            <span class="card-category">${product.categoryLabel}</span>
             <h3 class="card-title">${product.name}</h3>
-
-            <!-- Technical Specs Matrix inside Product Card -->
-            <div class="card-specs-preview">
-              <div class="spec-mini">
-                <span class="spec-mini-label">${SVG_ICONS.cpu} المعالج</span>
-                <span class="spec-mini-value" title="${product.specs.cpu}">${product.specs.cpu}</span>
-              </div>
-              <div class="spec-mini">
-                <span class="spec-mini-label">${SVG_ICONS.ram} الرامات</span>
-                <span class="spec-mini-value" title="${product.specs.ram}">${product.specs.ram}</span>
-              </div>
-              <div class="spec-mini">
-                <span class="spec-mini-label">${SVG_ICONS.storage} التخزين</span>
-                <span class="spec-mini-value" title="${product.specs.storage}">${product.specs.storage}</span>
-              </div>
-              <div class="spec-mini">
-                <span class="spec-mini-label">${SVG_ICONS.gpu} كرت الشاشة</span>
-                <span class="spec-mini-value" title="${product.specs.gpu}">${product.specs.gpu}</span>
-              </div>
-            </div>
+            <p class="card-brief-spec ltr-text" style="text-align: right;">${briefSpec}</p>
 
             <div class="card-footer">
-              <div class="price-block">
-                ${hasDiscount ? `<span class="old-price">${formatMoney(product.oldPrice)}</span>` : ""}
-                <span class="current-price">${formatMoney(product.price)}</span>
-              </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="btn-details"
-                  onclick="event.stopPropagation(); openProductModal('${product.id}')"
-                >
-                  المواصفات والصور
-                </button>
-                <button
-                  type="button"
-                  class="btn-quick-add"
-                  onclick="event.stopPropagation(); quickAddToCart('${product.id}')"
-                  title="إضافة سريعة للسلة"
-                >
-                  ${SVG_ICONS.plus}
-                  <span>للسلة</span>
-                </button>
-              </div>
+              <span class="current-price ltr-text">${formatMoney(product.price)}</span>
+              <span class="card-open-hint">التفاصيل</span>
             </div>
           </div>
         </article>
@@ -239,19 +173,13 @@ function resetAllFilters() {
   state.filters = {
     category: "all",
     search: "",
-    brand: "all",
-    ram: "all",
     sort: "featured"
   };
 
   const searchInput = document.getElementById("search-input");
-  const brandSelect = document.getElementById("filter-brand");
-  const ramSelect = document.getElementById("filter-ram");
   const sortSelect = document.getElementById("filter-sort");
 
   if (searchInput) searchInput.value = "";
-  if (brandSelect) brandSelect.value = "all";
-  if (ramSelect) ramSelect.value = "all";
   if (sortSelect) sortSelect.value = "featured";
 
   document.querySelectorAll(".category-tab").forEach((btn) => {
@@ -333,9 +261,8 @@ function renderModalContent() {
     .join("");
 
   document.getElementById("modal-badges").innerHTML = `
-    <span class="badge badge-condition">${product.condition}</span>
-    <span class="badge badge-stock">${product.inStock ? "متوفر في المعرض" : "غير متوفر"}</span>
-    <span class="badge" style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); color: var(--text-secondary);">${product.categoryLabel}</span>
+    <span class="tag-pill">${product.condition}</span>
+    <span class="tag-pill">${product.categoryLabel}</span>
   `;
   document.getElementById("modal-title").textContent = product.name;
   document.getElementById("modal-desc").textContent = product.shortDesc;
@@ -452,13 +379,6 @@ function addToCart(product, variantId, quantity) {
   showToast(`تمت إضافة "${product.name}" إلى السلة`);
 }
 
-function quickAddToCart(productId) {
-  const product = state.products.find((p) => p.id === productId);
-  if (!product) return;
-  const defaultVariant = product.variants?.[0]?.id || "std";
-  addToCart(product, defaultVariant, 1);
-}
-
 function addActiveModalProductToCart(openCheckoutImmediately = false) {
   if (!state.activeProduct) return;
   addToCart(state.activeProduct, state.selectedVariantId, state.modalQty);
@@ -554,7 +474,7 @@ function updateCartUI() {
       <div class="cart-empty-state">
         ${SVG_ICONS.cartEmpty}
         <h4>سلة المشتريات فارغة</h4>
-        <p style="font-size: 0.82rem;">اختر اللابتوب أو الكمبيوتر المطلوب وأضفه للسلة لإتمام الطلب عبر واتساب.</p>
+        <p style="font-size: 0.8rem;">اضغط على أي جهاز لعرض تفاصيله وإضافته للسلة.</p>
       </div>
     `;
     if (checkoutSection) checkoutSection.style.display = "none";
@@ -697,14 +617,11 @@ function completeOrderViaWhatsApp(event) {
    Theme Toggle & Event Listeners Initialization
    ========================================================================== */
 function toggleTheme() {
-  state.theme = state.theme === "dark" ? "light" : "dark";
+  state.theme = state.theme === "light" ? "dark" : "light";
   document.documentElement.setAttribute("data-theme", state.theme);
   const btn = document.getElementById("theme-toggle-btn");
   if (btn) {
-    btn.innerHTML =
-      state.theme === "dark"
-        ? `${SVG_ICONS.sun}<span>مظهر فاتح</span>`
-        : `${SVG_ICONS.moon}<span>مظهر داكن</span>`;
+    btn.innerHTML = state.theme === "light" ? SVG_ICONS.moon : SVG_ICONS.sun;
   }
 }
 
@@ -728,16 +645,6 @@ document.addEventListener("DOMContentLoaded", () => {
       applyFilters();
     });
   }
-
-  document.getElementById("filter-brand")?.addEventListener("change", (e) => {
-    state.filters.brand = e.target.value;
-    applyFilters();
-  });
-
-  document.getElementById("filter-ram")?.addEventListener("change", (e) => {
-    state.filters.ram = e.target.value;
-    applyFilters();
-  });
 
   document.getElementById("filter-sort")?.addEventListener("change", (e) => {
     state.filters.sort = e.target.value;
