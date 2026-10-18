@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * CARBON TECH - Minimalist Application Logic (5-Step Ordering + Gallery Modal)
+ * CARBON TECH - Interactive 3D Spotlight + Minimalist Ordering Logic
  * Strict Technical Rules:
  * 1. Read-only Sanity CMS architecture (No write tokens in frontend).
  * 2. Floating-point safe math using safeRound() + .toFixed(2) formatting.
@@ -14,6 +14,28 @@ const SVG_ICONS = {
   moon: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`
 };
 
+// Flagship Spotlight Items Configuration
+const SPOTLIGHT_ITEMS = [
+  {
+    productId: "prod-alienware-16x",
+    tag: "الأقوى للألعاب والهندسة • 240Hz QHD+",
+    orbColor: "rgba(56, 189, 248, 0.38)",
+    chips: ["Core i9-14900HX", "RTX 4070 8GB", "32GB DDR5", "1TB Gen4 SSD"]
+  },
+  {
+    productId: "prod-custom-pc-4080",
+    tag: "تجميعة الزجاج البانورامي • تبريد مائي 360mm",
+    orbColor: "rgba(99, 102, 241, 0.42)",
+    chips: ["Ryzen 7 7800X3D", "RTX 4080 Super 16GB", "32GB DDR5 RGB", "2TB NVMe"]
+  },
+  {
+    productId: "prod-dell-xps-14",
+    tag: "تحفة الألمنيوم المصقول • شاشة 3.2K OLED لمس",
+    orbColor: "rgba(16, 185, 129, 0.35)",
+    chips: ["Core Ultra 7", "3.2K OLED 120Hz", "32GB LPDDR5x", "1TB SSD"]
+  }
+];
+
 const state = {
   products: [...PRODUCTS_DATA],
   filteredProducts: [...PRODUCTS_DATA],
@@ -22,6 +44,8 @@ const state = {
     search: "",
     sort: "featured"
   },
+  spotlightIndex: 0,
+  spotlightTimer: null,
   activeProduct: null,
   activeImageIndex: 0,
   selectedVariantId: "std",
@@ -63,11 +87,92 @@ function showToast(message) {
 }
 
 /* ==========================================================================
+   Interactive 3D Flagship Spotlight Controller
+   ========================================================================== */
+function renderSpotlight() {
+  const cfg = SPOTLIGHT_ITEMS[state.spotlightIndex] || SPOTLIGHT_ITEMS[0];
+  const product = state.products.find((p) => p.id === cfg.productId) || state.products[0];
+  if (!product) return;
+
+  const orbEl = document.getElementById("spotlight-orb");
+  if (orbEl) orbEl.style.setProperty("--orb-color", cfg.orbColor);
+
+  const tagEl = document.getElementById("spotlight-tag");
+  const titleEl = document.getElementById("spotlight-title");
+  const descEl = document.getElementById("spotlight-desc");
+  const chipsEl = document.getElementById("spotlight-chips");
+  const priceEl = document.getElementById("spotlight-price");
+  const imgEl = document.getElementById("spotlight-image");
+  const openBtn = document.getElementById("spotlight-open-btn");
+  const frameEl = document.getElementById("spotlight-3d-frame");
+
+  if (tagEl) tagEl.textContent = cfg.tag;
+  if (titleEl) titleEl.textContent = product.name;
+  if (descEl) descEl.textContent = product.shortDesc;
+  if (priceEl) priceEl.textContent = formatMoney(product.price);
+  if (imgEl) {
+    imgEl.src = product.images[0]?.url || "";
+    imgEl.alt = product.name;
+  }
+
+  if (chipsEl) {
+    chipsEl.innerHTML = cfg.chips
+      .map((chip) => `<span class="spotlight-chip ltr-text">${chip}</span>`)
+      .join("");
+  }
+
+  if (openBtn) {
+    openBtn.onclick = () => openProductModal(product.id);
+  }
+  if (frameEl) {
+    frameEl.onclick = () => openProductModal(product.id);
+  }
+
+  document.querySelectorAll(".spotlight-tab").forEach((btn, idx) => {
+    btn.classList.toggle("active", idx === state.spotlightIndex);
+  });
+}
+
+function selectSpotlightIndex(index) {
+  state.spotlightIndex = index % SPOTLIGHT_ITEMS.length;
+  renderSpotlight();
+  resetSpotlightTimer();
+}
+
+function resetSpotlightTimer() {
+  if (state.spotlightTimer) clearInterval(state.spotlightTimer);
+  state.spotlightTimer = setInterval(() => {
+    state.spotlightIndex = (state.spotlightIndex + 1) % SPOTLIGHT_ITEMS.length;
+    renderSpotlight();
+  }, 5500);
+}
+
+function initSpotlight3DParallax() {
+  const stage = document.getElementById("spotlight-stage");
+  const frame = document.getElementById("spotlight-3d-frame");
+  if (!stage || !frame) return;
+
+  stage.addEventListener("mousemove", (e) => {
+    const rect = stage.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    const rotateY = x * 18;
+    const rotateX = -y * 14;
+    frame.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale(1.03)`;
+  });
+
+  stage.addEventListener("mouseleave", () => {
+    frame.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+  });
+}
+
+/* ==========================================================================
    Sanity CMS Public Read-Only Fetcher (Ready for Phase 2 Dashboard)
    ========================================================================== */
 async function loadCatalogData() {
   if (!STORE_CONFIG.sanity.enabled) {
     state.products = [...PRODUCTS_DATA];
+    renderSpotlight();
     applyFilters();
     return;
   }
@@ -89,6 +194,7 @@ async function loadCatalogData() {
     console.warn("Using local fallback catalog:", err.message);
     state.products = [...PRODUCTS_DATA];
   }
+  renderSpotlight();
   applyFilters();
 }
 
@@ -133,7 +239,7 @@ function renderProductsGrid() {
 
   if (state.filteredProducts.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+      <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-outer);">
         <h3 style="margin-bottom: 0.4rem; font-size: 1rem;">لا توجد نتائج مطابقة</h3>
         <button class="cart-pill-btn" onclick="resetAllFilters()" style="margin: 0.75rem auto 0;">عرض جميع الأجهزة</button>
       </div>
@@ -141,7 +247,6 @@ function renderProductsGrid() {
     return;
   }
 
-  // Ultra-clean Product Card: Studio Photo + Title + 1-line Brief Spec + Price
   grid.innerHTML = state.filteredProducts
     .map((product) => {
       const mainImage = product.images[0]?.url || "";
@@ -628,6 +733,8 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", () => {
   loadCatalogData();
   updateCartUI();
+  initSpotlight3DParallax();
+  resetSpotlightTimer();
 
   document.querySelectorAll(".category-tab").forEach((tab) => {
     tab.addEventListener("click", () => {
