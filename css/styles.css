@@ -1,73 +1,73 @@
 /* ==========================================================================
-   MINIMAL STUDIO — Distraction-Free Electronics Showroom
-   Focus: Calm Studio Palette, Floating Pill Navbar, Ultra-Clean Product Cards
+   MINIMAL STUDIO — Luxury Showroom & Distraction-Free Electronics Store
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Studio Light Palette (Default — Apple / Minimalist Retail Style) */
-  --bg-page: #f5f5f7;
-  --bg-nav: rgba(255, 255, 255, 0.86);
+  /* Warm Architectural Studio Palette (Harmonized with hero-bg.jpg) */
+  --bg-page: #f4f3ef;
+  --bg-nav: rgba(255, 255, 255, 0.88);
   --bg-card: #ffffff;
-  --bg-stage: #f8f9fb;
-  --bg-subtle: #f1f2f6;
-  --bg-overlay: rgba(15, 23, 42, 0.45);
+  --bg-stage: #f7f6f3;
+  --bg-subtle: #eceae4;
+  --bg-overlay: rgba(15, 15, 18, 0.52);
 
-  --text-main: #1d1d1f;
-  --text-muted: #6e6e73;
-  --text-light: #86868b;
+  --text-main: #18181b;
+  --text-muted: #65635e;
+  --text-light: #8c8982;
 
-  --accent: #0066cc;
-  --accent-soft: rgba(0, 102, 204, 0.08);
-  --primary-btn: #1d1d1f;
-  --primary-btn-hover: #333336;
+  --accent: #18181b;
+  --accent-soft: rgba(24, 24, 27, 0.06);
+  --primary-btn: #18181b;
+  --primary-btn-hover: #2e2e33;
   --primary-btn-text: #ffffff;
 
   --whatsapp: #128c7e;
   --whatsapp-hover: #075e54;
 
-  --border: rgba(0, 0, 0, 0.07);
-  --border-hover: rgba(0, 0, 0, 0.16);
+  --border: rgba(24, 24, 27, 0.07);
+  --border-hover: rgba(24, 24, 27, 0.18);
 
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 22px;
+  --radius-xl: 28px;
   --radius-pill: 999px;
 
-  --shadow-nav: 0 4px 24px -4px rgba(0, 0, 0, 0.05);
-  --shadow-card: 0 2px 14px -2px rgba(0, 0, 0, 0.04);
-  --shadow-card-hover: 0 16px 36px -8px rgba(0, 0, 0, 0.09);
-  --shadow-modal: 0 24px 60px -12px rgba(0, 0, 0, 0.2);
+  --shadow-nav: 0 8px 30px -6px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 20px -4px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 18px 38px -8px rgba(0, 0, 0, 0.1);
+  --shadow-modal: 0 28px 65px -12px rgba(0, 0, 0, 0.25);
 
   --transition: 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 [data-theme="dark"] {
-  --bg-page: #121316;
-  --bg-nav: rgba(24, 25, 30, 0.86);
-  --bg-card: #1a1c22;
-  --bg-stage: #21242c;
-  --bg-subtle: #262932;
-  --bg-overlay: rgba(0, 0, 0, 0.72);
+  --bg-page: #111113;
+  --bg-nav: rgba(22, 22, 26, 0.88);
+  --bg-card: #19191d;
+  --bg-stage: #212126;
+  --bg-subtle: #28282e;
+  --bg-overlay: rgba(0, 0, 0, 0.74);
 
-  --text-main: #f5f5f7;
-  --text-muted: #9ca3af;
-  --text-light: #6b7280;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-light: #71717a;
 
-  --accent: #38bdf8;
-  --accent-soft: rgba(56, 189, 248, 0.12);
-  --primary-btn: #f5f5f7;
+  --accent: #f4f4f5;
+  --accent-soft: rgba(244, 244, 245, 0.08);
+  --primary-btn: #f4f4f5;
   --primary-btn-hover: #ffffff;
-  --primary-btn-text: #121316;
+  --primary-btn-text: #111113;
 
-  --border: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(255, 255, 255, 0.18);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
 
-  --shadow-nav: 0 8px 28px -6px rgba(0, 0, 0, 0.4);
-  --shadow-card: 0 4px 20px -4px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 18px 40px -10px rgba(0, 0, 0, 0.5);
-  --shadow-modal: 0 28px 70px -12px rgba(0, 0, 0, 0.75);
+  --shadow-nav: 0 10px 32px -6px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 6px 22px -4px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 20px 44px -10px rgba(0, 0, 0, 0.55);
+  --shadow-modal: 0 30px 75px -12px rgba(0, 0, 0, 0.8);
 }
 
 /* Reset */
@@ -149,14 +149,14 @@ img {
 }
 
 /* ==========================================================================
-   Floating Pill Navigation Bar (شريط علوي انسيابي موحد)
+   Floating Pill Navigation Bar (شريط علوي انسيابي مع الشعار)
    ========================================================================== */
 .nav-wrapper {
   position: sticky;
   top: 0.85rem;
   z-index: 100;
   padding: 0 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .floating-navbar {
@@ -167,7 +167,7 @@ img {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  padding: 0.55rem 0.75rem 0.55rem 0.65rem;
+  padding: 0.5rem 0.7rem 0.5rem 0.65rem;
   box-shadow: var(--shadow-nav);
   display: flex;
   align-items: center;
@@ -182,22 +182,19 @@ img {
   gap: 0.65rem;
   text-decoration: none;
   color: var(--text-main);
-  padding-right: 0.4rem;
+  padding-right: 0.25rem;
 }
 
-.brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--primary-btn);
-  color: var(--primary-btn-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.brand-logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .brand-name {
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -236,7 +233,7 @@ img {
   font-weight: 600;
 }
 
-/* Navbar Left Actions (Search + Theme + Cart) */
+/* Navbar Left Actions */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -245,13 +242,13 @@ img {
 
 .nav-search {
   position: relative;
-  width: 190px;
+  width: 185px;
   transition: width var(--transition);
 }
 
 @media (min-width: 960px) {
   .nav-search:focus-within {
-    width: 240px;
+    width: 235px;
   }
 }
 
@@ -322,7 +319,7 @@ img {
 }
 
 .cart-count {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.22);
   padding: 0 6px;
   height: 20px;
   min-width: 20px;
@@ -336,32 +333,126 @@ img {
 }
 
 [data-theme="dark"] .cart-count {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* ==========================================================================
+   Luxury Showroom Hero Banner (صورة الخلفية الفاخرة مع الشعار)
+   ========================================================================== */
+.showroom-hero {
+  margin-bottom: 2.25rem;
+}
+
+.showroom-banner {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 280px;
+  background-image: url('../assets/brand/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card-hover);
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .showroom-banner {
+    min-height: 340px;
+    padding: 2.75rem 3rem;
+  }
+}
+
+.showroom-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(12, 12, 14, 0.84) 0%,
+    rgba(12, 12, 14, 0.52) 55%,
+    rgba(12, 12, 14, 0.2) 100%
+  );
+}
+
+.showroom-content {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.showroom-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.showroom-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.showroom-brand-meta span {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.showroom-brand-meta strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.showroom-content h1 {
+  font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.showroom-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 490px;
 }
 
 /* ==========================================================================
    Minimal Intro Header (Zero Clutter)
    ========================================================================== */
 .page-intro {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .page-intro-title h2 {
-  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-size: 1.3rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
   color: var(--text-main);
 }
 
 .page-intro-title p {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 .sort-minimal {
@@ -418,7 +509,6 @@ img {
   border-color: var(--border-hover);
 }
 
-/* Clean Studio Image Box */
 .card-media {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -442,7 +532,6 @@ img {
   transform: scale(1.05);
 }
 
-/* Minimal Card Body — Only Name, 1-line Core Spec, and Price */
 .card-body {
   padding: 1rem 0.4rem 0.35rem;
   display: flex;
@@ -497,7 +586,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.3rem 0.7rem;
+  padding: 0.3rem 0.75rem;
   border-radius: var(--radius-pill);
   background: var(--accent-soft);
   transition: all var(--transition);
@@ -598,7 +687,6 @@ img {
   }
 }
 
-/* Multi-Image Gallery inside Modal */
 .modal-gallery {
   display: flex;
   flex-direction: column;
@@ -706,7 +794,6 @@ img {
   object-fit: contain;
 }
 
-/* Modal Details & Full Specs Column */
 .modal-info {
   display: flex;
   flex-direction: column;
@@ -762,7 +849,6 @@ img {
   text-decoration: line-through;
 }
 
-/* Variant Selector */
 .variant-selector-box h4 {
   font-size: 0.78rem;
   margin-bottom: 0.45rem;
@@ -794,7 +880,6 @@ img {
   font-weight: 600;
 }
 
-/* Detailed Specifications Table */
 .specs-table-wrapper {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -831,7 +916,6 @@ img {
   font-family: 'Inter', 'IBM Plex Sans Arabic', sans-serif;
 }
 
-/* Modal Purchase Bar */
 .modal-purchase-bar {
   display: flex;
   flex-wrap: wrap;
