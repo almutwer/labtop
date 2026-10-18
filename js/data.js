@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * CARBON TECH - Catalog Data & Sanity CMS Schema Blueprint
- * Uses studio transparent PNG photography (multi-angle gallery per device).
+ * Focus: Business Laptops, Engineering Workstations, and Professional Desktops
  * Client-side data is read-only. Never store Sanity Write Tokens here.
  * ============================================================================
  */
@@ -28,62 +28,26 @@ const STORE_CONFIG = {
 
 const PRODUCTS_DATA = [
   {
-    id: "prod-alienware-16x",
-    sku: "AW-16X-4070",
-    name: "Alienware 16X Aurora Gaming",
-    brand: "Dell",
-    category: "gaming-laptops",
-    categoryLabel: "لابتوبات ألعاب",
-    condition: "جديد بالكرتون",
-    inStock: true,
-    price: 1649.00,
-    oldPrice: 1799.00,
-    shortDesc: "هيكل معدني مؤكسد مع نظام تبريد Cryo-Tech رباعي المخارج وشاشة QHD+ بتردد 240Hz للألعاب الاحترافية.",
-    specs: {
-      cpu: "Intel Core i9-14900HX (24 Cores)",
-      ram: "32GB DDR5 5600MHz",
-      ramFilter: "32GB",
-      storage: "1TB NVMe PCIe 4.0 SSD",
-      gpu: "NVIDIA GeForce RTX 4070 8GB",
-      display: "16.0\" QHD+ (2560x1600) 240Hz 100% DCI-P3",
-      battery: "90Wh + شاحن 280W GaN",
-      os: "Windows 11 Pro أصلية",
-      ports: "2x Thunderbolt 4, 2x USB 3.2, HDMI 2.1, RJ-45, SD",
-      warranty: "ضمان سنتين شامل"
-    },
-    variants: [
-      { id: "std", label: "32GB RAM + 1TB SSD (القياسي)", priceDelta: 0 },
-      { id: "upg-2tb", label: "32GB RAM + 2TB SSD (+95$)", priceDelta: 95.00 },
-      { id: "upg-64gb", label: "64GB RAM + 2TB SSD (+210$)", priceDelta: 210.00 }
-    ],
-    images: [
-      { url: "assets/products/gaming-aw-1.png", caption: "الواجهة الزاوية اليمنى والتصميم الخارجي" },
-      { url: "assets/products/gaming-aw-2.png", caption: "الزاوية اليسرى ومخارج التبريد الجانبية" },
-      { url: "assets/products/gaming-aw-3.png", caption: "لوحة المفاتيح الميكانيكية وشبكة التبريد العلوية" },
-      { url: "assets/products/precision-4.png", caption: "السمك الجانبي ومنافذ التوصيل" }
-    ]
-  },
-  {
     id: "prod-dell-xps-14",
     sku: "DELL-XPS-9440",
     name: "Dell XPS Platinum Edition OLED",
     brand: "Dell",
     category: "workstations",
-    categoryLabel: "محطات عمل ومونتاج",
+    categoryLabel: "محطات العمل والمونتاج",
     condition: "جديد بالكرتون",
     inStock: true,
     price: 1580.00,
     oldPrice: 1720.00,
-    shortDesc: "تصميم CNC من الألمنيوم المصقول مع لوحة لمس زجاجية غير مرئية وشاشة OLED بدقة 3.2K لمصممي الجرافيك.",
+    shortDesc: "تصميم CNC من الألمنيوم المصقول مع لوحة لمس زجاجية متصلة وشاشة OLED بدقة 3.2K للمهندسين والمصممين.",
     specs: {
       cpu: "Intel Core Ultra 7 155H (16 Cores)",
       ram: "32GB LPDDR5x 7467MHz",
       ramFilter: "32GB",
       storage: "1TB NVMe PCIe Gen4 SSD",
-      gpu: "NVIDIA GeForce RTX 4050 6GB",
+      gpu: "NVIDIA RTX 4050 Studio 6GB",
       display: "14.5\" 3.2K OLED Touch 120Hz InfinityEdge",
       battery: "69.5Wh شحن سريع ExpressCharge",
-      os: "Windows 11 Pro",
+      os: "Windows 11 Pro أصلية",
       ports: "3x Thunderbolt 4 (USB-C), MicroSDXC, Audio Jack",
       warranty: "ضمان سنتين Dell ProSupport"
     },
@@ -100,39 +64,39 @@ const PRODUCTS_DATA = [
     ]
   },
   {
-    id: "prod-custom-pc-4080",
-    sku: "PC-CARBON-4080S",
-    name: "تجميعة Carbon Glass RTX 4080 Super",
-    brand: "Custom PC",
-    category: "desktop-pcs",
-    categoryLabel: "كمبيوترات مكتبية",
-    condition: "تجميعة احترافية جديدة",
+    id: "prod-macbook-pro-16",
+    sku: "APL-MBP16-M3P",
+    name: "Apple MacBook Pro 16 M3 Pro",
+    brand: "Apple",
+    category: "workstations",
+    categoryLabel: "محطات العمل والمونتاج",
+    condition: "جديد بالكرتون",
     inStock: true,
-    price: 2390.00,
-    oldPrice: 2550.00,
-    shortDesc: "كيس زجاجي بانورامي مزدوج مع تبريد مائي 360mm ومعالج Ryzen 7 7800X3D لأقصى أداء في الألعاب والريندر.",
+    price: 2150.00,
+    oldPrice: 2299.00,
+    shortDesc: "أداء فائق للمبرمجين وصناع المحتوى مع شاشة Liquid Retina XDR بتردد 120Hz وبطارية تدوم حتى 22 ساعة.",
     specs: {
-      cpu: "AMD Ryzen 7 7800X3D (8-Core 5.0GHz 3D V-Cache)",
-      ram: "32GB DDR5 6000MHz CL30",
-      ramFilter: "32GB",
-      storage: "2TB NVMe Gen4 SSD (7400MB/s)",
-      gpu: "MSI GeForce RTX 4080 Super 16GB GDDR6X",
-      display: "يدعم 4 شاشات 4K 240Hz / 8K",
-      battery: "مزود طاقة 850W 80+ Gold ATX 3.0",
-      os: "Windows 11 Pro مفعّل",
-      ports: "Wi-Fi 6E, 2.5G LAN, USB-C 20Gbps, 8x USB 3.2",
-      warranty: "ضمان سنتين شامل الصيانة"
+      cpu: "Apple M3 Pro (12-Core CPU)",
+      ram: "18GB Unified Memory",
+      ramFilter: "18GB",
+      storage: "512GB SuperFast SSD",
+      gpu: "Apple 18-Core GPU",
+      display: "16.2\" Liquid Retina XDR 120Hz ProMotion",
+      battery: "100Wh + شاحن 140W MagSafe 3",
+      os: "macOS Sonoma",
+      ports: "3x Thunderbolt 4, HDMI 2.1, SDXC, MagSafe 3",
+      warranty: "ضمان سنة دولي"
     },
     variants: [
-      { id: "std", label: "32GB DDR5 + 2TB NVMe (الكيس فقط)", priceDelta: 0 },
-      { id: "upg-64", label: "64GB DDR5 + 2TB NVMe (+115$)", priceDelta: 115.00 },
-      { id: "with-monitor", label: "مع شاشة 27\" QHD 180Hz IPS (+230$)", priceDelta: 230.00 }
+      { id: "std", label: "18GB RAM + 512GB SSD", priceDelta: 0 },
+      { id: "upg-1tb", label: "18GB RAM + 1TB SSD (+170$)", priceDelta: 170.00 },
+      { id: "upg-36gb", label: "36GB RAM + 1TB SSD (+360$)", priceDelta: 360.00 }
     ],
     images: [
-      { url: "assets/products/pc-blue-1.png", caption: "الواجهة الزجاجية البانورامية وتبريد السائل" },
-      { url: "assets/products/pc-purple-2.png", caption: "التصميم الداخلي وكرت الشاشة MSI GeForce RTX" },
-      { url: "assets/products/pc-red-4.png", caption: "نسخة الإضاءة الحمراء الاحترافية" },
-      { url: "assets/products/pc-white-3.png", caption: "نسخة الاستوديو الثلجية الاختيارية" }
+      { url: "assets/products/macbook-1.png", caption: "الواجهة الأمامية لشاشة Retina" },
+      { url: "assets/products/macbook-2.png", caption: "الزاوية الجانبية ولوحة المفاتيح" },
+      { url: "assets/products/xps-4.png", caption: "تصميم لوحة المفاتيح ومساحة العمل" },
+      { url: "assets/products/precision-4.png", caption: "السمك الجانبي" }
     ]
   },
   {
@@ -141,12 +105,12 @@ const PRODUCTS_DATA = [
     name: "Dell Precision 5690 Carbon Workstation",
     brand: "Dell",
     category: "workstations",
-    categoryLabel: "محطات عمل ومونتاج",
+    categoryLabel: "محطات العمل والمونتاج",
     condition: "جديد بالكرتون",
     inStock: true,
     price: 1890.00,
     oldPrice: 2050.00,
-    shortDesc: "محطة عمل متنقلة مخصصة للمهندسين ومطوري الذكاء الاصطناعي والمونتاج السينمائي بهيكل كربوني فائق المتانة.",
+    shortDesc: "محطة عمل متنقلة مخصصة للمهندسين ومطوري الذكاء الاصطناعي والريندر المعماري بهيكل كربوني فائق المتانة.",
     specs: {
       cpu: "Intel Core Ultra 9 185H vPro (16 Cores)",
       ram: "64GB LPDDR5x ECC",
@@ -171,53 +135,17 @@ const PRODUCTS_DATA = [
     ]
   },
   {
-    id: "prod-macbook-pro-16",
-    sku: "APL-MBP16-M3P",
-    name: "Apple MacBook Pro 16 M3 Pro",
-    brand: "Apple",
-    category: "workstations",
-    categoryLabel: "محطات عمل ومونتاج",
-    condition: "جديد بالكرتون",
-    inStock: true,
-    price: 2150.00,
-    oldPrice: 2299.00,
-    shortDesc: "أداء فائق للمبرمجين وصناع المحتوى مع شاشة Liquid Retina XDR بتردد 120Hz وبطارية تدوم حتى 22 ساعة.",
-    specs: {
-      cpu: "Apple M3 Pro (12-Core CPU)",
-      ram: "18GB Unified Memory",
-      ramFilter: "16GB",
-      storage: "512GB SuperFast SSD",
-      gpu: "Apple 18-Core GPU",
-      display: "16.2\" Liquid Retina XDR 120Hz ProMotion",
-      battery: "100Wh + شاحن 140W MagSafe 3",
-      os: "macOS Sonoma",
-      ports: "3x Thunderbolt 4, HDMI 2.1, SDXC, MagSafe 3",
-      warranty: "ضمان سنة دولي"
-    },
-    variants: [
-      { id: "std", label: "18GB RAM + 512GB SSD", priceDelta: 0 },
-      { id: "upg-1tb", label: "18GB RAM + 1TB SSD (+170$)", priceDelta: 170.00 },
-      { id: "upg-36gb", label: "36GB RAM + 1TB SSD (+360$)", priceDelta: 360.00 }
-    ],
-    images: [
-      { url: "assets/products/macbook-1.png", caption: "الواجهة الأمامية لشاشة Retina" },
-      { url: "assets/products/macbook-2.png", caption: "الزاوية الجانبية ولوحة المفاتيح" },
-      { url: "assets/products/xps-4.png", caption: "تصميم لوحة المفاتيح ومساحة العمل" },
-      { url: "assets/products/precision-4.png", caption: "السمك الجانبي" }
-    ]
-  },
-  {
     id: "prod-dell-16-plus",
     sku: "DL-16PLUS-U7",
-    name: "Dell 16 Plus Creator Edition",
+    name: "Dell 16 Plus Creator & Business",
     brand: "Dell",
     category: "business-laptops",
-    categoryLabel: "لابتوبات أعمال ودراسة",
+    categoryLabel: "الأعمال والدراسة",
     condition: "جديد بالكرتون",
     inStock: true,
     price: 1090.00,
     oldPrice: 1220.00,
-    shortDesc: "لابتوب أعمال وبرمجة بشاشة 16 بوصة مريحة للعين ولوحة مفاتيح كاملة مع أرقام جانبية وميموري DDR5.",
+    shortDesc: "لابتوب أعمال وبرمجة بشاشة 16 بوصة مريحة للعين ولوحة مفاتيح كاملة مع أرقام جانبية وذاكرة DDR5.",
     specs: {
       cpu: "Intel Core i7-13700H (14 Cores)",
       ram: "16GB LPDDR5 6400MHz",
@@ -247,12 +175,12 @@ const PRODUCTS_DATA = [
     name: "Dell 15 Business Dark Azurite",
     brand: "Dell",
     category: "business-laptops",
-    categoryLabel: "لابتوبات أعمال ودراسة",
+    categoryLabel: "الأعمال والدراسة",
     condition: "استيراد نظيف (كالجديد)",
     inStock: true,
     price: 620.00,
     oldPrice: 740.00,
-    shortDesc: "خيار اقتصادي عملي للشركات والطلاب والمحاسبة، مفحوص بالكامل بحالة الوكالة مع ضمان المحل.",
+    shortDesc: "خيار اقتصادي عملي للشركات والطلاب والمحاسبة، مفحوص بالكامل بحالة الوكالة مع ضمان المعرض.",
     specs: {
       cpu: "Intel Core i5-1335U (10 Cores)",
       ram: "16GB DDR4 3200MHz",
@@ -263,7 +191,7 @@ const PRODUCTS_DATA = [
       battery: "54Wh حالة ممتازة + شاحن أصلي",
       os: "Windows 11 Pro",
       ports: "USB-C, 2x USB-A, HDMI, RJ-45, SD Card",
-      warranty: "ضمان المحل 6 أشهر"
+      warranty: "ضمان المعرض 6 أشهر"
     },
     variants: [
       { id: "std", label: "16GB RAM + 512GB SSD", priceDelta: 0 },
@@ -277,23 +205,94 @@ const PRODUCTS_DATA = [
     ]
   },
   {
-    id: "prod-pc-nebula-5060",
-    sku: "PC-NEBULA-4060TI",
-    name: "تجميعة Nebula Studio & Gaming RTX 4060 Ti",
-    brand: "Custom PC",
+    id: "prod-xps-13-executive",
+    sku: "DELL-XPS13-9340",
+    name: "Dell XPS 13 Executive UltraLight",
+    brand: "Dell",
+    category: "business-laptops",
+    categoryLabel: "الأعمال والدراسة",
+    condition: "جديد بالكرتون",
+    inStock: true,
+    price: 1290.00,
+    oldPrice: 1390.00,
+    shortDesc: "لابتوب تنفيذي فائق الخفة (1.17 كجم) لرجال الأعمال والتنقل المستمر مع بطارية تدوم طوال يوم العمل.",
+    specs: {
+      cpu: "Intel Core Ultra 7 155H (16 Cores)",
+      ram: "16GB LPDDR5x 7467MHz",
+      ramFilter: "16GB",
+      storage: "1TB NVMe PCIe Gen4 SSD",
+      gpu: "Intel Arc Graphics",
+      display: "13.4\" FHD+ InfinityEdge 120Hz 500nits",
+      battery: "55Wh شحن سريع USB-C",
+      os: "Windows 11 Pro",
+      ports: "2x Thunderbolt 4 (USB-C)",
+      warranty: "ضمان سنتين"
+    },
+    variants: [
+      { id: "std", label: "16GB RAM + 1TB SSD", priceDelta: 0 },
+      { id: "upg-32", label: "32GB RAM + 1TB SSD (+120$)", priceDelta: 120.00 }
+    ],
+    images: [
+      { url: "assets/products/xps-3.png", caption: "الزاوية الأمامية للتصميم النحيف" },
+      { url: "assets/products/xps-1.png", caption: "الواجهة الأمامية" },
+      { url: "assets/products/xps-4.png", caption: "لوحة المفاتيح واللمس الزجاجية" },
+      { url: "assets/products/xps-5.png", caption: "الغطاء الخلفي المعدني" }
+    ]
+  },
+  {
+    id: "prod-workstation-tower-pro",
+    sku: "WS-CAD-4080S",
+    name: "محطة عمل مكتبية ProStudio CAD & 3D Render",
+    brand: "Workstation PC",
     category: "desktop-pcs",
-    categoryLabel: "كمبيوترات مكتبية",
-    condition: "تجميعة جديدة",
+    categoryLabel: "الكمبيوترات المكتبية",
+    condition: "محطة عمل جديدة",
+    inStock: true,
+    price: 2390.00,
+    oldPrice: 2550.00,
+    shortDesc: "كمبيوتر مكتبي هندسي مخصص للمكاتب الاستشارية، الريندر المعماري (Lumion, 3ds Max, Revit)، والمونتاج بدقة 8K.",
+    specs: {
+      cpu: "Intel Core i9-14900K (24 Cores / 6.0GHz)",
+      ram: "64GB DDR5 6000MHz",
+      ramFilter: "64GB",
+      storage: "2TB NVMe Gen4 SSD (7400MB/s)",
+      gpu: "NVIDIA RTX 4080 Super Studio 16GB",
+      display: "يدعم 4 شاشات احترافية 4K / 8K",
+      battery: "مزود طاقة 850W 80+ Gold ATX 3.0",
+      os: "Windows 11 Pro for Workstations",
+      ports: "Wi-Fi 6E, 2.5G LAN, USB-C 20Gbps, 8x USB 3.2",
+      warranty: "ضمان سنتين شامل الصيانة"
+    },
+    variants: [
+      { id: "std", label: "64GB DDR5 + 2TB NVMe (الوحدة المكتبية)", priceDelta: 0 },
+      { id: "upg-128", label: "128GB DDR5 + 4TB NVMe (+290$)", priceDelta: 290.00 },
+      { id: "with-monitor", label: "مع شاشة 27\" 4K IPS خاصة بالمصممين (+260$)", priceDelta: 260.00 }
+    ],
+    images: [
+      { url: "assets/products/pc-blue-1.png", caption: "وحدة المعالجة المكتبية ونظام التبريد السائل" },
+      { url: "assets/products/pc-white-3.png", caption: "النسخة البيضاء للمكاتب والاستوديوهات" },
+      { url: "assets/products/pc-purple-2.png", caption: "التصميم الداخلي وتنظيم القطع" },
+      { url: "assets/products/precision-3.png", caption: "بيئة العمل الهندسية" }
+    ]
+  },
+  {
+    id: "prod-studio-desktop-i7",
+    sku: "WS-STUDIO-I7",
+    name: "كمبيوتر مكتبي Studio Creator Core i7",
+    brand: "Workstation PC",
+    category: "desktop-pcs",
+    categoryLabel: "الكمبيوترات المكتبية",
+    condition: "جديد بالكرتون",
     inStock: true,
     price: 1320.00,
     oldPrice: 1450.00,
-    shortDesc: "تجميعة مكتبية بتصميم بانورامي ثلاثي الزجاج مع تبريد مائي متكامل للألعاب بدقة 1440p وبرامج التصميم.",
+    shortDesc: "جهاز مكتبي هادئ وعالي الكفاءة لبرامج التصميم الجرافيكي، المونتاج، وإدارة الأعمال المتقدمة.",
     specs: {
-      cpu: "Intel Core i7-14700F (20 Cores / 5.4GHz)",
+      cpu: "Intel Core i7-14700 (20 Cores / 5.4GHz)",
       ram: "32GB DDR5 6000MHz",
       ramFilter: "32GB",
       storage: "1TB NVMe PCIe 4.0 SSD",
-      gpu: "PNY GeForce RTX 4060 Ti 16GB VRAM",
+      gpu: "NVIDIA RTX 4060 Ti 16GB VRAM",
       display: "منافذ 3x DisplayPort 1.4a + HDMI 2.1",
       battery: "مزود طاقة 750W 80+ Gold",
       os: "Windows 11 Pro",
@@ -305,10 +304,10 @@ const PRODUCTS_DATA = [
       { id: "upg-2tb", label: "32GB RAM + 2TB NVMe (+65$)", priceDelta: 65.00 }
     ],
     images: [
-      { url: "assets/products/pc-white-3.png", caption: "الكيس البانورامي ثلاثي الزجاج" },
-      { url: "assets/products/pc-purple-2.png", caption: "النسخة السوداء بنفس المواصفات" },
-      { url: "assets/products/pc-blue-1.png", caption: "نظام التبريد المائي الثلاثي" },
-      { url: "assets/products/pc-red-4.png", caption: "التصميم الداخلي وتنظيم الكابلات" }
+      { url: "assets/products/pc-white-3.png", caption: "التصميم الأبيض الهادئ للاستوديو" },
+      { url: "assets/products/pc-blue-1.png", caption: "النسخة الداكنة" },
+      { url: "assets/products/pc-purple-2.png", caption: "العتاد الداخلي" },
+      { url: "assets/products/precision-1.png", caption: "التوافق مع أنظمة العرض" }
     ]
   }
 ];

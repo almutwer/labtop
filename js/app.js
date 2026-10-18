@@ -14,25 +14,25 @@ const SVG_ICONS = {
   moon: `<svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`
 };
 
-// Flagship Spotlight Items Configuration
+// Flagship Professional & Workstation Spotlight Items
 const SPOTLIGHT_ITEMS = [
-  {
-    productId: "prod-alienware-16x",
-    tag: "الأقوى للألعاب والهندسة • 240Hz QHD+",
-    orbColor: "rgba(56, 189, 248, 0.38)",
-    chips: ["Core i9-14900HX", "RTX 4070 8GB", "32GB DDR5", "1TB Gen4 SSD"]
-  },
-  {
-    productId: "prod-custom-pc-4080",
-    tag: "تجميعة الزجاج البانورامي • تبريد مائي 360mm",
-    orbColor: "rgba(99, 102, 241, 0.42)",
-    chips: ["Ryzen 7 7800X3D", "RTX 4080 Super 16GB", "32GB DDR5 RGB", "2TB NVMe"]
-  },
   {
     productId: "prod-dell-xps-14",
     tag: "تحفة الألمنيوم المصقول • شاشة 3.2K OLED لمس",
-    orbColor: "rgba(16, 185, 129, 0.35)",
-    chips: ["Core Ultra 7", "3.2K OLED 120Hz", "32GB LPDDR5x", "1TB SSD"]
+    orbColor: "rgba(56, 189, 248, 0.34)",
+    chips: ["Core Ultra 7", "3.2K OLED 120Hz", "32GB LPDDR5x", "1TB Gen4 SSD"]
+  },
+  {
+    productId: "prod-macbook-pro-16",
+    tag: "أداء احترافي للمبرمجين والمونتاج • بطارية 22 ساعة",
+    orbColor: "rgba(148, 163, 184, 0.36)",
+    chips: ["Apple M3 Pro", "16.2\" Retina XDR", "18GB Unified", "140W MagSafe 3"]
+  },
+  {
+    productId: "prod-precision-5690",
+    tag: "محطة عمل هندسية متنقلة • هيكل ألياف الكربون",
+    orbColor: "rgba(16, 185, 129, 0.32)",
+    chips: ["Core Ultra 9 vPro", "RTX 2000 Ada 8GB", "64GB ECC RAM", "2TB Gen4 SSD"]
   }
 ];
 
