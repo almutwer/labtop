@@ -2,7 +2,7 @@
  * ============================================================================
  * CARBON TECH - Catalog Data & Sanity CMS Schema Blueprint
  * Focus: Business Laptops, Engineering Workstations, and Professional Desktops
- * Client-side data is read-only. Never store Sanity Write Tokens here.
+ * Zero human photos, zero gaming devices.
  * ============================================================================
  */
 
@@ -57,10 +57,10 @@ const PRODUCTS_DATA = [
       { id: "upg-64gb", label: "64GB RAM + 2TB SSD (+260$)", priceDelta: 260.00 }
     ],
     images: [
-      { url: "assets/products/xps-1.png", caption: "الواجهة الأمامية وشاشة InfinityEdge" },
-      { url: "assets/products/xps-2.png", caption: "الزاوية الجانبية اليمنى" },
+      { url: "assets/products/precision-1.png", caption: "الواجهة الأمامية وشاشة OLED" },
       { url: "assets/products/xps-4.png", caption: "لوحة المفاتيح واللمس الزجاجية المتصلة" },
-      { url: "assets/products/xps-5.png", caption: "الغطاء الخلفي من الألمنيوم المصقول" }
+      { url: "assets/products/xps-5.png", caption: "الغطاء الخلفي من الألمنيوم المصقول" },
+      { url: "assets/products/precision-4.png", caption: "السمك الجانبي فائق النحافة" }
     ]
   },
   {
@@ -128,9 +128,9 @@ const PRODUCTS_DATA = [
       { id: "upg-4tb", label: "64GB RAM + 4TB SSD (+220$)", priceDelta: 220.00 }
     ],
     images: [
-      { url: "assets/products/precision-1.png", caption: "الواجهة الأمامية والشاشة المضادة للتوهج" },
       { url: "assets/products/precision-2.png", caption: "الزاوية الجانبية ومنافذ التوصيل الاحترافية" },
       { url: "assets/products/precision-3.png", caption: "عرض لوحة التحكم الهندسية" },
+      { url: "assets/products/precision-1.png", caption: "الواجهة الأمامية والشاشة المضادة للتوهج" },
       { url: "assets/products/precision-4.png", caption: "التصميم الجانبي النحيف" }
     ]
   },
@@ -233,10 +233,10 @@ const PRODUCTS_DATA = [
       { id: "upg-32", label: "32GB RAM + 1TB SSD (+120$)", priceDelta: 120.00 }
     ],
     images: [
-      { url: "assets/products/xps-3.png", caption: "الزاوية الأمامية للتصميم النحيف" },
-      { url: "assets/products/xps-1.png", caption: "الواجهة الأمامية" },
+      { url: "assets/products/pro16-3.png", caption: "الزاوية الأمامية للتصميم النحيف" },
+      { url: "assets/products/xps-5.png", caption: "الغطاء الخلفي المعدني من الألمنيوم" },
       { url: "assets/products/xps-4.png", caption: "لوحة المفاتيح واللمس الزجاجية" },
-      { url: "assets/products/xps-5.png", caption: "الغطاء الخلفي المعدني" }
+      { url: "assets/products/precision-4.png", caption: "السمك الجانبي" }
     ]
   },
   {
